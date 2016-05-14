@@ -2,25 +2,25 @@
 using namespace std;
 
 
-class matrix 
+class Matrix 
 {
 	int n;
 	int m;
 	float* data;
 public:
-	matrix()
+	Matrix()
 	{
 		n = 0;
 		m = 0;
 		data = NULL;
 	}
-	matrix(int n, int m)
+	Matrix(int n, int m)
 	{
 		this->n = n;
 		this->m = m;
 		data = new float[n*m];
 	}
-	matrix(const matrix& c)
+	Matrix(const Matrix& c)
 	{
 		float tmp;
 		n = c.n;
@@ -35,7 +35,7 @@ public:
 			}
 		}
 	}
-	virtual matrix& operator = (matrix& a)
+	virtual Matrix& operator = (Matrix& a)
 		{
 			float tmp;
 			n = a.n;
@@ -51,11 +51,11 @@ public:
 			}
 			return (*this);
 		}
-	virtual matrix operator + (matrix& a)
+	virtual Matrix operator + (Matrix& a)
 	{
 		if (n == a.getN() && m == a.getM())
 		{
-			matrix c(n,m);
+			Matrix c(n,m);
 			float tmp;
 			for (int j = 0; j < m; j++)
 			{
@@ -69,15 +69,15 @@ public:
 		}
 		else
 		{
-			matrix c;
+			Matrix c;
 			return c;
 		}
 	}
-	virtual matrix operator - (matrix& a)
+	virtual Matrix operator - (Matrix& a)
 	{
 		if (n == a.getN() && m == a.getM())
 		{
-			matrix c(n, m);
+			Matrix c(n, m);
 			float tmp;
 			for (int j = 0; j < m; j++)
 			{
@@ -91,16 +91,16 @@ public:
 		}
 		else
 		{
-			matrix c;
+			Matrix c;
 			return c;
 		}
 	}
-	virtual matrix operator * (matrix& a)
+	virtual Matrix operator * (Matrix& a)
 	{
 		
 		if (n == a.getM())
 		{
-			matrix c(m,a.getN());
+			Matrix c(m,a.getN());
 			float k = 0;
 			for (int j = 0; j < m; j++)
 			{
@@ -116,19 +116,19 @@ public:
 		}
 		else
 		{
-			matrix c;
+			Matrix c;
 			return c;
 		}
 	
 	}
-	virtual matrix transpose()
+	virtual Matrix transpose()
 	{
 		if (failed())
 		{
-			matrix c;
+			Matrix c;
 			return c;
 		}
-		matrix c(m, n);
+		Matrix c(m, n);
 		for (int j = 0; j < m; j++)
 			for (int i = 0; i < n; i++)
 				c.set(j, i, get(i, j));
