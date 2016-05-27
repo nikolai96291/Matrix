@@ -179,7 +179,7 @@ public:
 		}
 		return(o);
 	}
-	virtual Matrix GetMinor(int _i, int _j)
+	virtual Matrix GetMinor(int _j, int _i)
 	{
 		if (n != m)
 		{
@@ -211,8 +211,8 @@ public:
 		if (n == 1)
 			return data[0];
 		double det = 0;
-		for (int i(0); i < n; i++)
-			det = det + powf(-1, i)*data[i] * GetMinor(0, i).determinant();
+		for (int j(0); j < n; j++)
+			det = det + powf(-1, j)*data[j] * GetMinor(0, j).determinant();
 		return det;
 	}
 	virtual Matrix reverse()
@@ -223,8 +223,8 @@ public:
 		if (det == 0)
 			return *this;
 		Matrix _inverse(n, m);
-		for (int i(0); i < n; i++)
-			for (int j(0); j < m; j++)
+		for (int j(0); j < n; j++)
+			for (int i(0); i < m; i++)
 			{
 			_inverse.set(i, j, powf(-1, i + j) * GetMinor(j, i).determinant());
 			}
@@ -252,9 +252,19 @@ public:
 	{
 		return (n <= 0 || m <= 0 || n != m || data == NULL);
 	}
-virtual Matrix* get_init(int n, int m)
+	virtual Matrix* get_init(int n, int m)
 	{
 		Matrix* N = new Matrix(n, m);
 		return N;
 	}
+
 };
+void main()
+{
+	Matrix a,b,c;
+	a.read(cin);
+	c = a.reverse();
+	cout << a.determinant();
+	
+	c.print(cout);
+}
