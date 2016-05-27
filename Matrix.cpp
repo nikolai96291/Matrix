@@ -36,7 +36,7 @@ public:
 			}
 		}
 	}
-	virtual Matrix& operator = (Matrix& a)
+	virtual Matrix& operator = (const Matrix& a)
 	{
 		float tmp;
 		n = a.n;
