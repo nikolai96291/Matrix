@@ -1,21 +1,11 @@
-In file included from cur.cpp:16:0:
-ulshin/Matrix.cpp: In member function 'virtual Matrix Matrix::reverse()':
-ulshin/Matrix.cpp:232:12: error: no match for 'operator=' (operand types are 'Matrix' and 'Matrix')
-   _inverse = _inverse*pow(det, -1);
-            ^
-ulshin/Matrix.cpp:232:12: note: candidate is:
-ulshin/Matrix.cpp:39:18: note: virtual Matrix& Matrix::operator=(Matrix&)
-  virtual Matrix& operator = (Matrix& a)
-                  ^
-ulshin/Matrix.cpp:39:18: note:   no known conversion for argument 1 from 'Matrix' to 'Matrix&'
-cur.cpp: In member function 'virtual void MatrixTest_Reverse_Test::TestBody()':
-cur.cpp:47:7: error: no match for 'operator=' (operand types are 'Matrix' and 'Matrix')
-     c = m->reverse();
-       ^
-cur.cpp:47:7: note: candidate is:
-In file included from cur.cpp:16:0:
-ulshin/Matrix.cpp:39:18: note: virtual Matrix& Matrix::operator=(Matrix&)
-  virtual Matrix& operator = (Matrix& a)
-                  ^
-ulshin/Matrix.cpp:39:18: note:   no known conversion for argument 1 from 'Matrix' to 'Matrix&'
+/var/tmp//ccb3ypN4.o: In function `MatrixTest_GetNM_Test::TestBody()':
+cur.cpp:(.text+0x17): undefined reference to `get_init(int, int)'
+/var/tmp//ccb3ypN4.o: In function `MatrixTest_Reverse_Test::TestBody()':
+cur.cpp:(.text+0x24d): undefined reference to `get_init(int, int)'
+cur.cpp:(.text+0x459): undefined reference to `get_init(int, int)'
+/var/tmp//ccb3ypN4.o: In function `MatrixTest_Transpose_Test::TestBody()':
+cur.cpp:(.text+0xab2): undefined reference to `get_init(int, int)'
+/var/tmp//ccb3ypN4.o: In function `MatrixTest_SetGet_Test::TestBody()':
+cur.cpp:(.text+0xcd2): undefined reference to `get_init(int, int)'
+/var/tmp//ccb3ypN4.o:cur.cpp:(.text+0xed3): more undefined references to `get_init(int, int)' follow
 ./check.sh: line 24: ./a.out: No such file or directory
