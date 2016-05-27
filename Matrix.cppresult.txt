@@ -1,29 +1,21 @@
-cur.cpp: In member function 'virtual void MatrixTest_Reverse_Test::TestBody()':
-cur.cpp:34:19: error: 'class Matrix' has no member named 'reverse'
-     Matrix c = m->reverse();
-                   ^
-cur.cpp:47:12: error: 'class Matrix' has no member named 'reverse'
-     c = m->reverse();
+In file included from cur.cpp:16:0:
+ulshin/Matrix.cpp: In member function 'virtual Matrix Matrix::reverse()':
+ulshin/Matrix.cpp:232:12: error: no match for 'operator=' (operand types are 'Matrix' and 'Matrix')
+   _inverse = _inverse*pow(det, -1);
             ^
-In file included from /usr/pkg/include/gtest/gtest.h:57:0,
-                 from cur.cpp:14:
-cur.cpp: In member function 'virtual void MatrixTest_Determinant_Test::TestBody()':
-cur.cpp:126:30: error: 'class Matrix' has no member named 'determinant'
-     EXPECT_TRUE(abs((int)(m->determinant())) < 0.001);
-                              ^
-/usr/pkg/include/gtest/internal/gtest-internal.h:1179:34: note: in definition of macro 'GTEST_TEST_BOOLEAN_'
-       ::testing::AssertionResult(expression)) \
-                                  ^
-cur.cpp:126:5: note: in expansion of macro 'EXPECT_TRUE'
-     EXPECT_TRUE(abs((int)(m->determinant())) < 0.001);
-     ^
-cur.cpp:139:30: error: 'class Matrix' has no member named 'determinant'
-     EXPECT_TRUE(abs((int)(m->determinant() - 1)) < 0.001);
-                              ^
-/usr/pkg/include/gtest/internal/gtest-internal.h:1179:34: note: in definition of macro 'GTEST_TEST_BOOLEAN_'
-       ::testing::AssertionResult(expression)) \
-                                  ^
-cur.cpp:139:5: note: in expansion of macro 'EXPECT_TRUE'
-     EXPECT_TRUE(abs((int)(m->determinant() - 1)) < 0.001);
-     ^
+ulshin/Matrix.cpp:232:12: note: candidate is:
+ulshin/Matrix.cpp:39:18: note: virtual Matrix& Matrix::operator=(Matrix&)
+  virtual Matrix& operator = (Matrix& a)
+                  ^
+ulshin/Matrix.cpp:39:18: note:   no known conversion for argument 1 from 'Matrix' to 'Matrix&'
+cur.cpp: In member function 'virtual void MatrixTest_Reverse_Test::TestBody()':
+cur.cpp:47:7: error: no match for 'operator=' (operand types are 'Matrix' and 'Matrix')
+     c = m->reverse();
+       ^
+cur.cpp:47:7: note: candidate is:
+In file included from cur.cpp:16:0:
+ulshin/Matrix.cpp:39:18: note: virtual Matrix& Matrix::operator=(Matrix&)
+  virtual Matrix& operator = (Matrix& a)
+                  ^
+ulshin/Matrix.cpp:39:18: note:   no known conversion for argument 1 from 'Matrix' to 'Matrix&'
 ./check.sh: line 24: ./a.out: No such file or directory
