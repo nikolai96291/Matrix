@@ -259,12 +259,4 @@ public:
 	}
 
 };
-void main()
-{
-	Matrix a,b,c;
-	a.read(cin);
-	c = a.reverse();
-	cout << a.determinant();
-	
-	c.print(cout);
-}
+
