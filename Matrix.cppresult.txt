@@ -1,11 +1,121 @@
-/var/tmp//cc4aEKPx.o: In function `MatrixTest_GetNM_Test::TestBody()':
-cur.cpp:(.text+0x17): undefined reference to `get_init(int, int)'
-/var/tmp//cc4aEKPx.o: In function `MatrixTest_Reverse_Test::TestBody()':
-cur.cpp:(.text+0x24d): undefined reference to `get_init(int, int)'
-cur.cpp:(.text+0x459): undefined reference to `get_init(int, int)'
-/var/tmp//cc4aEKPx.o: In function `MatrixTest_Transpose_Test::TestBody()':
-cur.cpp:(.text+0xab2): undefined reference to `get_init(int, int)'
-/var/tmp//cc4aEKPx.o: In function `MatrixTest_SetGet_Test::TestBody()':
-cur.cpp:(.text+0xcd2): undefined reference to `get_init(int, int)'
-/var/tmp//cc4aEKPx.o:cur.cpp:(.text+0xed3): more undefined references to `get_init(int, int)' follow
-./check.sh: line 24: ./a.out: No such file or directory
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from MatrixTest
+[ RUN      ] MatrixTest.GetNM
+cur.cpp:23: Failure
+Value of: m->getM()
+  Actual: 4
+Expected: 3
+cur.cpp:24: Failure
+Value of: m->getN()
+  Actual: 3
+Expected: 4
+[  FAILED  ] MatrixTest.GetNM
+[ RUN      ] MatrixTest.Reverse
+1 2 3 4 
+0 1 2 3 
+0 0 1 2 
+0 0 0 1 
+1 -0 0 -0 
+-2 1 -0 0 
+1 -2 1 -0 
+-0 1 -2 1 
+index: 0
+index: 1
+index: 2
+index: 3
+cur.cpp:55: Failure
+Value of: round(c.get(i+1,i))
+  Actual: -0
+Expected: -2
+cur.cpp:55: Failure
+Value of: round(c.get(i+1,i))
+  Actual: -0
+Expected: -2
+cur.cpp:55: Failure
+Value of: round(c.get(i+1,i))
+  Actual: -0
+Expected: -2
+cur.cpp:57: Failure
+Value of: round(c.get(i+2,i))
+  Actual: 0
+Expected: 1
+cur.cpp:57: Failure
+Value of: round(c.get(i+2,i))
+  Actual: 0
+Expected: 1
+[  FAILED  ] MatrixTest.Reverse
+[ RUN      ] MatrixTest.Transpose
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 1
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 2
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 3
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 4
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 5
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 6
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 7
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 8
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 9
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 10
+cur.cpp:78: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(cc++)
+Which is: 11
+[  FAILED  ] MatrixTest.Transpose
+[ RUN      ] MatrixTest.SetGet
+[       OK ] MatrixTest.SetGet
+[ RUN      ] MatrixTest.FailedM
+[       OK ] MatrixTest.FailedM
+[ RUN      ] MatrixTest.Read
+[       OK ] MatrixTest.Read
+[ RUN      ] MatrixTest.Determinant
+[       OK ] MatrixTest.Determinant
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test case ran.
+[  PASSED  ] 4 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] MatrixTest.GetNM
+[  FAILED  ] MatrixTest.Reverse
+[  FAILED  ] MatrixTest.Transpose
+
+ 3 FAILED TESTS
