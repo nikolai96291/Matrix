@@ -252,11 +252,10 @@ public:
 	{
 		return (n <= 0 || m <= 0 || n != m || data == NULL);
 	}
-	virtual Matrix* get_init(int n, int m)
+};
+	Matrix* get_init(int n, int m)
 	{
 		Matrix* N = new Matrix(n, m);
 		return N;
 	}
-
-};
 
